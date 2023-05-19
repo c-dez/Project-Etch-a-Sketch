@@ -32,10 +32,31 @@ function createGrid(userSize){
         grid.style.boxSizing = ('border-box');
         grid.style.height = (gridSize+'px');
         grid.style.width = (gridSize+'px');
+        grid.style.backgroundColor = ('white');
     
     
     }
     }
+
+    //hacer que cambie el background color a negro al hacer click
+    const grids = document.querySelectorAll('#container div');
+    
+    function clickToChange(grid){
+        grid.addEventListener('click',()=>
+        {
+            grid.style.backgroundColor = ('black');
+        })
+    }
+    grids.forEach((grid)=>clickToChange(grid))
+
+    // grids.forEach((grid) => {
+    //     clickToChange(grid);
+    //   });
+        
+        
+            
+    
+    
     
 
 
