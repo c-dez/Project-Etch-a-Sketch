@@ -2,7 +2,6 @@
 //put them in another div container
 //they need to be a grid---flex wrap
 
-//funcion tama;o grid
 
 const width =500;
 const userSize= 10;
@@ -24,7 +23,7 @@ createGrid(userSize);
 // grid.style.backgroundColor =('trasparent');
 
 function createGrid(userSize){
-    for(let i =1; i<=(userSize*userSize);i++){
+    for(let i =1; i<=(userSize**2);i++){
         const grid = document.createElement('div');
         container.appendChild(grid);
         grid.style.border = ('1px solid grey');
@@ -42,16 +41,20 @@ function createGrid(userSize){
     const grids = document.querySelectorAll('#container div');
     
     function clickToChange(grid){
-        grid.addEventListener('click',()=>
+        grid.addEventListener('mousedown',()=>
         {
             grid.style.backgroundColor = ('black');
         })
     }
-    grids.forEach((grid)=>clickToChange(grid))
+    grids.forEach(grid=>clickToChange(grid))
 
-    // grids.forEach((grid) => {
-    //     clickToChange(grid);
-    //   });
+    //3 añadir hover
+    //4 añador boton que pregunte por el numero de grids
+    //extra
+    //en vez de cambia a negro el background, que cambie a un color al azar
+    //then try having each pass just add another 10% of black 
+        //to it so that only after 10 passes is the square completely black.
+
         
         
             
