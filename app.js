@@ -36,6 +36,7 @@ function createGrid(userSize){
     
     }
     }
+    createGrid(userSize);
 
 
     //hacer que cambie el background color a negro al hacer click
@@ -60,14 +61,13 @@ function createGrid(userSize){
 
     //btn16 cambia userSize = 16 e invoca createGrid
 
-    btn16.addEventListener('click', function(){
-        userSize = 16;
-        gridSize = width/userSize;
-        createGrid(userSize);
+    // btn16.addEventListener('click', function(){
+    //     userSize = 16;
+    //     gridSize = width/userSize;
 
         
 
-    })
+    // })
 
     //extra
     //en vez de cambia a negro el background, que cambie a un color al azar
