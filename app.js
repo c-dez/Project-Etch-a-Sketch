@@ -3,8 +3,8 @@
 //they need to be a grid---flex wrap
 
 
-const width =500;
-const userSize= 10;
+let width =500;
+let userSize= 10;
 let gridSize = width/userSize;
 
 
@@ -18,7 +18,7 @@ container.style.height = ('500px');
 container.style.width = ('500px');
 container.style.border =('5px solid pink');
 
-createGrid(userSize);
+// createGrid(userSize);
 
 // grid.style.backgroundColor =('trasparent');
 
@@ -37,6 +37,7 @@ function createGrid(userSize){
     }
     }
 
+
     //hacer que cambie el background color a negro al hacer click
     const grids = document.querySelectorAll('#container div');
     
@@ -50,6 +51,24 @@ function createGrid(userSize){
 
     //3 añadir hover
     //4 añador boton que pregunte por el numero de grids
+
+    //16x16
+    const controls = document.querySelector('#controls');
+    const btn16 = document.createElement('button');
+    controls.appendChild(btn16);
+    btn16.textContent = ('16x16')
+
+    //btn16 cambia userSize = 16 e invoca createGrid
+
+    btn16.addEventListener('click', function(){
+        userSize = 16;
+        gridSize = width/userSize;
+        createGrid(userSize);
+
+        
+
+    })
+
     //extra
     //en vez de cambia a negro el background, que cambie a un color al azar
     //then try having each pass just add another 10% of black 
