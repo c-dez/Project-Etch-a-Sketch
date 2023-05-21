@@ -46,10 +46,10 @@ gridContainer.style.flexWrap = ('wrap');
 //tama;o de cada div----gridContainer.heigth/8
 let gridContainerHeigth = gridContainer.style.height;
 
-function gridGenerator(){
+function gridGenerator(size){
 let gridSize = 500/8;
 
-    for(let i = 0; i<8**2; i++){
+    for(let i = 0; i<size**2; i++){
         const grids = document.createElement('div');
         gridContainer.appendChild(grids);
         grids.className = ('grids');
@@ -61,9 +61,19 @@ let gridSize = 500/8;
 
     }
 }
+let rmGrids = document.getElementsByClassName('grids');
+
+function gridRemove(){
+    while(rmGrids.length>0){
+        rmGrids[0].remove();
+    }
+}
 
 //buttons click
-btn8.addEventListener('click',()=> gridGenerator() );
+btn8.addEventListener('click',()=> gridGenerator(8) );
+btn16.addEventListener('click',()=> gridRemove() );
+
+
 // gridGenerator();
 
 
