@@ -23,11 +23,11 @@ const btn16= document.createElement('button');
 btn16.className = ('btn16');
 menuContainer.appendChild(btn16);
 btn16.textContent = ('16x16');
-//32x32
-const btn32 = document.createElement('button');
-btn32.className = ('btn32');
-menuContainer.appendChild(btn32);
-btn32.textContent = ('32x32');
+//24x24
+const btn24 = document.createElement('button');
+btn24.className = ('btn24');
+menuContainer.appendChild(btn24);
+btn24.textContent = ('24x24');
 //btnClear
 const btnClear = document.createElement('button');
 btnClear.className = ('btnClear');
@@ -54,7 +54,7 @@ gridContainer.style.flexWrap = ('wrap');
 let gridContainerHeigth = gridContainer.style.height;
 
 function gridGenerator(size){
-let gridSize = 500/8;
+let gridSize = 500/size;
 
     for(let i = 0; i<size**2; i++){
         const grids = document.createElement('div');
@@ -78,8 +78,16 @@ let rmGrids = document.getElementsByClassName('grids');
 }
 
 //buttons click
-btn8.addEventListener('click',()=> gridGenerator(8) );
-btn16.addEventListener('click',()=> gridGenerator(16) );
+btn8.addEventListener('click',()=>{ 
+    gridRemove();
+    gridGenerator(8)} );
+btn16.addEventListener('click',()=> {
+    gridRemove();
+    gridGenerator(16)} );
+btn24.addEventListener('click',()=>{
+    gridRemove();
+    gridGenerator(24);
+})    
 btnClear.addEventListener('click',()=> gridRemove())
 
 
