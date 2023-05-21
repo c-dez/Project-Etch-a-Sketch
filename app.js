@@ -38,30 +38,33 @@ gridContainer.style.border = ('1px solid red')
 gridContainer.style.height = ('500px');
 gridContainer.style.width = ('500px');
 gridContainer.style.display = ('flex');
-gridContainer.style.flexDirection = ('column');
 gridContainer.style.flexShrink = ('0');
 gridContainer.style.flexWrap = ('wrap');
 
 
 //gridGenerator empezar con 8x8
 //tama;o de cada div----gridContainer.heigth/8
+let gridContainerHeigth = gridContainer.style.height;
 
 function gridGenerator(){
 let gridSize = 500/8;
 
-    for(let i = 0; i<=8**2; i++){
-        const grid = document.createElement('div');
-        gridContainer.appendChild(grid);
-        grid.className = ('grid');
-        grid.style.border = ('1px solid gray')
-        grid.style.boxSizing = ('border-box');
-        grid.style.height =('62.5px');
-        grid.style.width =('62.5px');
+    for(let i = 0; i<8**2; i++){
+        const grids = document.createElement('div');
+        gridContainer.appendChild(grids);
+        grids.className = ('grids');
+        grids.style.border = ('1px solid gray')
+        grids.style.boxSizing = ('border-box');
+        grids.style.height =(gridSize+'px');
+        grids.style.width =(gridSize+'px');
 
 
     }
 }
-gridGenerator();
+
+//buttons click
+btn8.addEventListener('click',()=> gridGenerator() );
+// gridGenerator();
 
 
 
