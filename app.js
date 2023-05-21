@@ -28,6 +28,13 @@ const btn32 = document.createElement('button');
 btn32.className = ('btn32');
 menuContainer.appendChild(btn32);
 btn32.textContent = ('32x32');
+//btnClear
+const btnClear = document.createElement('button');
+btnClear.className = ('btnClear');
+menuContainer.appendChild(btnClear);
+btnClear.textContent = ('Clear');
+btnClear.style.alignSelf = ('center');
+
 
 
 //gridContainer
@@ -61,9 +68,10 @@ let gridSize = 500/8;
 
     }
 }
-let rmGrids = document.getElementsByClassName('grids');
 
 function gridRemove(){
+let rmGrids = document.getElementsByClassName('grids');
+
     while(rmGrids.length>0){
         rmGrids[0].remove();
     }
@@ -71,7 +79,8 @@ function gridRemove(){
 
 //buttons click
 btn8.addEventListener('click',()=> gridGenerator(8) );
-btn16.addEventListener('click',()=> gridRemove() );
+btn16.addEventListener('click',()=> gridGenerator(16) );
+btnClear.addEventListener('click',()=> gridRemove())
 
 
 // gridGenerator();
