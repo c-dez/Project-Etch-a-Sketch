@@ -68,7 +68,7 @@ let gridSize = 500/size;
 
     }
 }
-
+gridGenerator(16);//8x8 at loading page
 function gridRemove(){
 let rmGrids = document.getElementsByClassName('grids');
 
@@ -80,18 +80,38 @@ let rmGrids = document.getElementsByClassName('grids');
 //buttons click
 btn8.addEventListener('click',()=>{ 
     gridRemove();
-    gridGenerator(8)} );
+    gridGenerator(8)
+    changeColor();
+} );
+
 btn16.addEventListener('click',()=> {
     gridRemove();
-    gridGenerator(16)} );
+    gridGenerator(16)
+    changeColor();
+} );
 btn24.addEventListener('click',()=>{
     gridRemove();
     gridGenerator(24);
+    changeColor();
+
 })    
 btnClear.addEventListener('click',()=> gridRemove())
 
+//change background color to black of every div (grids) inside gridContainer
 
-// gridGenerator();
+function changeColor(){
+ grids = document.querySelectorAll('.gridContainer div');
+
+    grids.forEach(grid => {
+        grid.addEventListener('mousedown', ()=>{
+        grid.style.backgroundColor = ('black')
+
+        })
+        
+    });
+}
+changeColor();
+
 
 
 
