@@ -12,6 +12,7 @@ menuContainer.style.flexDirection = ('column');
 menuContainer.style.border = ('1px solid red')
 menuContainer.style.height = ('500px');
 menuContainer.style.width = ('200px');
+
 //menuContainer buttons
 //btn8
 const btn8 = document.createElement('button');
@@ -68,7 +69,9 @@ let gridSize = 500/size;
 
     }
 }
-gridGenerator(16);//8x8 at loading page
+gridGenerator(8);//8x8 at loading page
+changeColor();
+
 function gridRemove(){
 let rmGrids = document.getElementsByClassName('grids');
 
@@ -101,16 +104,21 @@ btnClear.addEventListener('click',()=> gridRemove())
 
 function changeColor(){
  grids = document.querySelectorAll('.gridContainer div');
-
-    grids.forEach(grid => {
-        grid.addEventListener('mousedown', ()=>{
-        grid.style.backgroundColor = ('black')
-
+ let color = 'black';
+    Array.from(grids).forEach(grid => {
+        grid.addEventListener('mouseover', ()=>{
+        changeColorColor(grid, color);
         })
+        
+
         
     });
 }
-changeColor();
+function changeColorColor(grid, color){
+    grid.style.backgroundColor = (color);
+
+
+}
 
 
 
